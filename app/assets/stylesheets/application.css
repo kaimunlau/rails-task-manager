@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.fa-regular {
+  font-size: 1.5rem;
+}

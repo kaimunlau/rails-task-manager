@@ -2,8 +2,15 @@
 
 <ul>
   <% @tasks.each do |task| %>
-    <li><input type="checkbox" <%= task.completed ? "checked" : "" %>><%= link_to task.title, task_path(task) %></li>
+    <li class="list-unstyled d-flex gap-1 align-items-center bg-light p-2 m-2 rounded shadow w-50 fs-5">
+      <% if task.completed %>
+        <i class="fa-regular fa-square-check text-success"></i>
+      <% else %>
+        <i class="fa-regular fa-square"></i>
+      <% end %>
+      <%= link_to task.title, task_path(task), class: "text-decoration-none link-secondary" %>
+    </li>
   <% end %>
 </ul>
 
-<%= link_to "Add a new task", new_task_path %>
+<%= link_to "Add a new task", new_task_path, class: "text-decoration-none btn btn-primary" %>
